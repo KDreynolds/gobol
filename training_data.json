@@ -1,4 +1,0 @@
-{
-    "prompt": "Translate the following COBOL code to Go:\n\nIDENTIFICATION DIVISION.\nPROGRAM-ID. HELLO-WORLD.\nENVIRONMENT DIVISION.\nDATA DIVISION.\nPROCEDURE DIVISION.\n    DISPLAY 'Hello, World!'.\n    STOP RUN.",
-    "completion": "Here's the Go equivalent:\n\npackage main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, World!\")\n}"
-  }

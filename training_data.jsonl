@@ -1,0 +1,10 @@
+{ 
+  "prompt": "Translate the following COBOL code to Go:\n\nIDENTIFICATION DIVISION.\nPROGRAM-ID. HELLO-WORLD.\nENVIRONMENT DIVISION.\nDATA DIVISION.\nPROCEDURE DIVISION.\n    DISPLAY 'Hello, World!'.\n    STOP RUN.",
+  "completion": "Here's the Go equivalent:\n\npackage main\n\nimport \"fmt\"\n\nfunc main() {\n    fmt.Println(\"Hello, World!\")\n}"
+}
+  
+{
+  "prompt": "Translate the following COBOL code to Go:\n\nIDENTIFICATION DIVISION.\nPROGRAM-ID. CALCULATE-DISCOUNT.\nENVIRONMENT DIVISION.\nDATA DIVISION.\nWORKING-STORAGE SECTION.\n01 WS-QUANTITY PIC 9(5).\n01 WS-PRICE PIC 9(5)V99.\n01 WS-TOTAL PIC 9(7)V99.\n01 WS-DISCOUNT PIC 9(3)V99.\n01 WS-DISCOUNTED-TOTAL PIC 9(7)V99.\nPROCEDURE DIVISION.\n    DISPLAY 'Enter quantity: '.\n    ACCEPT WS-QUANTITY.\n    DISPLAY 'Enter price: '.\n    ACCEPT WS-PRICE.\n    COMPUTE WS-TOTAL = WS-QUANTITY * WS-PRICE.\n    IF WS-TOTAL > 1000\n        COMPUTE WS-DISCOUNT = WS-TOTAL * 0.1\n    ELSE\n        COMPUTE WS-DISCOUNT = WS-TOTAL * 0.05\n    END-IF.\n    COMPUTE WS-DISCOUNTED-TOTAL = WS-TOTAL - WS-DISCOUNT.\n    DISPLAY 'Total: $' WS-TOTAL.\n    DISPLAY 'Discount: $' WS-DISCOUNT.\n    DISPLAY 'Discounted Total: $' WS-DISCOUNTED-TOTAL.\n    STOP RUN.",
+  "completion": "Here's the Go equivalent:\n\npackage main\n\nimport (\n\t\"fmt\"\n\t\"strconv\"\n)\n\nfunc main() {\n\tvar quantity int\n\tvar price, total, discount, discountedTotal float64\n\n\tfmt.Print(\"Enter quantity: \")\n\tfmt.Scanln(&quantity)\n\n\tfmt.Print(\"Enter price: \")\n\tfmt.Scanln(&price)\n\n\ttotal = float64(quantity) * price\n\n\tif total > 1000 {\n\t\tdiscount = total * 0.1\n\t} else {\n\t\tdiscount = total * 0.05\n\t}\n\n\tdiscountedTotal = total - discount\n\n\tfmt.Printf(\"Total: $%.2f\\n\", total)\n\tfmt.Printf(\"Discount: $%.2f\\n\", discount)\n\tfmt.Printf(\"Discounted Total: $%.2f\\n\", discountedTotal)\n}"
+}
+
